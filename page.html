@@ -1,141 +1,52 @@
+---
+layout: base
+---
+
 {% if page.image.feature %}
-
-<!doctype html>
-<html lang="en">
-<meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ page.description }}">
-<meta name="keywords" content="{{ page.tags | join: ', ' }}">
-
-
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}">
-<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 120  }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:site_name" content="{{ site.title }}">
-
-
-<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Type -->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic" rel='stylesheet' type='text/css' />
-<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ site.url }}/assets/css/entypo.css" media="all">
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ site.url }}/assets/css/i.css">
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-
-<div id="bump">
-  <body class="">
+  <div id="bump">
     <header class="site-header">
       <div class="wrap">
         <hgroup>
-          <h1><a href="/"><img src="/images/psas.svg" style="vertical-align:middle;"></a></h1>
+          <h1><a href="/"><img src="/images/psas.svg" style="vertical-align:middle;" alt="PSAS"></a></h1>
         </hgroup>
         <a href="#nav" class="menu"><span class='icons'>☰</span></a>
-        <nav role="navigation">
+        <nav>
           <ul>
             {% for link in site.links %}
                 <li><a href="{% if link.external %}{{ link.url }}{% else %}{{ site.url }}{{ link.url }}{% endif %}" {% if link.external %}target="_blank"{% endif %}>{{ link.title }}</a></li>
             {% endfor %}
-
           </ul>
         </nav>
       </div>
     </header>
+    <section class="article">
+      <div class="overlay"></div>
+      <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})"></div>
 
-<section class="article">
 
-  <div class="overlay"></div>
-  <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})"></div>
 {% else %}
 
-<meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ page.description }}">
-<meta name="keywords" content="{{ page.tags | join: ', ' }}">
 
-
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}">
-<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 120  }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:site_name" content="{{ site.title }}">
-
-
-<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Type -->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic" rel='stylesheet' type='text/css' />
-<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ site.url }}/assets/css/entypo.css" media="all">
-
-<!-- In order to use Calendas Plus, you must first purchase it. Then, create a font-face package using FontSquirrel.
-<link rel='stylesheet' href='{{ site.url }}/assets/cal.css' media='all' />
--->
-
-
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ site.url }}/assets/css/i.css">
-
-<!-- Fresh Squeezed jQuery -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-
-<div id="bump">
-  <body class="">
+  <div id="bump">
     <header class="site-header darken">
       <div class="wrap">
         <hgroup>
           <h1><a href="/">{{ site.title }}</a></h1>
         </hgroup>
         <a href="#nav" class="menu"><span class='icons'>☰</span></a>
-        <nav role="navigation">
+        <nav>
           <ul>
             {% for link in site.links %}
                 <li><a href="{% if link.external %}{{ link.url }}{% else %}{{ site.url }}{{ link.url }}{% endif %}" {% if link.external %}target="_blank"{% endif %}>{{ link.title }}</a></li>
             {% endfor %}
-
           </ul>
         </nav>
       </div>
     </header>
-
-
-<section class="article pad-top">
+    <section class="article pad-top">
 
 {% endif %}
+
 
       <article class="wrap post">
         <header class="post-header">
@@ -155,38 +66,4 @@
     </section>
 </div>
 
-<div class="push"></div>
-  <footer>
-    <aside class="wrap">
-      <div class="social">
-        <ul>
-            <li><a id="mail" href="mailto:{{ site.owner.email }}"><span class="foot-link">Contact Us</span></a></li>
-
-            {% if site.owner.twitter %}
-            <li><a id="twit" href="https://twitter.com/{{ site.owner.twitter }}"><span class="foot-link">@{{ site.owner.twitter }}</span></a></li>
-            {% endif %}
-
-            {% if site.owner.github %}
-            <li><a id="twit" href="https://github.com/{{ site.owner.github }}"><span class="foot-link">github.com/{{ site.owner.github }}</span></a></li>
-            {% endif %}
-
-            {% if site.owner.youtube %}
-            <li><a id="twit" href="https://youtube.com/user/{{ site.owner.youtube }}"><span class="foot-link">YouTube.com/{{ site.owner.youtube }}</span></a></li>
-            {% endif %}
-
-        </ul>
-    </div>
-    </aside>
-    <small>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}.</small>
-  </footer>
-
-  <!-- If they're out, get some from the cellar -->
-  <script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-  <!-- Custom JS -->
-  <script src="{{ site.url }}/assets/js/scripts.js"></script>
-
-
-  </body>
-</html>
 
